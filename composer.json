@@ -1,0 +1,16 @@
+{
+    "name": "david/fitec",
+    "description": "Programa desenvolvido para ajudar no controle de Ficha Técnica",
+    "authors": [
+        {
+            "name": "David Ribeiro",
+            "email": "david.ribeiro05@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "require": {}
+}

@@ -1,0 +1,28 @@
+.fonte-titulo
+{
+    font-family: 'Pacifico', cursive;
+    font-size: 75px;
+}
+.fonte-label
+{
+    font-family: 'Quicksand', sans-serif;
+}
+.fonte-texto
+{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+}
+.bg-pagina
+{
+ background-color:#F2F2F2 !important;
+}
+.bg-label{
+    background-color: #2CBFB1 !important;
+}
+
+input, select{
+    background-color: #F29472!important;
+}
+.bg-link{
+    background-color: #F29472 !important;
+}
