@@ -25,16 +25,13 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
 
 <body class="bg-pagina">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
             <!--<a class="navbar-brand" href="listar.php">Logo</a>-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="cadastroBag.php">Cadastrar<span class="sr-only">Cadastro de bigbag</span></a>
-                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
@@ -48,6 +45,11 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                     </li>
                 </ul>
             </div>
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link justify-content-end" href="\index.php">Sair</a>
+                </li>
+            </ul>
         </nav>
         <div class="container">
             <h1 class="fonte-titulo text-center">Controle de Ficha Técnica</h1>
@@ -100,7 +102,7 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                                     <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-external-link-alt"></i></button>
                             </td>
                             </form>
-                            <form action="\Fitec\App\Controller\Produto\BigBag" method="POST">
+                            <form method="POST" action="\App\Controller\Produto\BigBag">
                                 <td>
                                     <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
                                     <button class="btn bg-label btn-sm" type="button" data-toggle="modal" data-target="#modalExcluir" name="btnExcluir">

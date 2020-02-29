@@ -65,7 +65,7 @@ foreach ($stmt->findByID($bb) as $dados) {}
     <div class="container">
         <h1 class="fonte-titulo text-center"><?php echo $dados['cliente'] ?></h1>
         <hr>
-        <form method="POST" action="\Fitec\App\Controller\Produto\BigBag">
+        <form method="POST" action="\App\Controller\Produto\BigBag">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Modelo</label>

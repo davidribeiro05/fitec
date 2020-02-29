@@ -40,7 +40,7 @@
     <div class="container">
         <h1 class="fonte-titulo text-center">Cadastro de Ficha Técnica</h1>
         <hr>
-        <form method="POST" action="\Fitec\App\Controller\Produto\BigBag">
+        <form method="POST" action="\App\Controller\Produto\BigBag">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Modelo</label>
@@ -204,7 +204,7 @@
             </div>
         </form>
     </div>
-    
+
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

@@ -197,10 +197,10 @@ if (isset($_POST["salvar"])) {
 }
 
 // Operação de exclusão
-if (isset($_POST['btnModal'])) :
+if (isset($_POST["btnModal"])) :
     $bb->setIdBigBag($_POST['excluir']);
     if (!$stmt->excluir($bb)) :
-        header("Location: /fitec/app/view/listar.php");
+        header("Location: /app/view/listar.php");
     else :
 
     endif;
