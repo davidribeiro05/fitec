@@ -89,7 +89,7 @@ if (isset($_POST['btnLogin'])) :
     if ($uDAO->validaLogin($u) == true) :
         $_SESSION['usuario'] = true;
         header('Location: \App\view\listar.php');
-    else:
+    else :
         header('Location: \index.php');
     endif;
 endif;
