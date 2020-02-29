@@ -4,11 +4,31 @@ use App\Controller\Paginacao;
 use App\model\BancoDado;
 
 require '/wamp64/www/fitec/vendor/autoload.php';
+?>
 
-//$bb = new \App\Controller\Produto\BigBag();
-$stmt = new \App\model\BigBagDAO();
+<!DOCTYPE html>
+<html lang="pt-br">
 
-$p = new \App\Controller\Paginacao();
-$p->setPagina((isset($_GET['pagina']))? $_GET['pagina'] : 1);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app/view/css/login.css">
+    <link rel="stylesheet" href="/app/view/css/bootstrap.css">
+    <link rel="stylesheet" href="/app/view/css/personalizado.css">
+    <title>Login</title>
+</head>
 
-//echo $stmt->paginacao($p);
+<body class="text-center bg-pagina">
+    <form class="form-signin">
+        <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Bem vindo, por favor realize o login!</h1>
+        <label for="usuario" class="sr-only">Usuário</label>
+        <input type="text" id="usuario" class="form-control" placeholder="Digite aqui seu usuário" required autofocus>
+        <label for="senha" class="sr-only">Senha</label>
+        <input type="password" id="senha" class="form-control" placeholder="Digite aqui sua senha" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+    </form>
+</body>
+
+</html>
