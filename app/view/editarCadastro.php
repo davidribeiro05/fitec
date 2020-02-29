@@ -2,34 +2,12 @@
 
 namespace App\view;
 
+include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
 $bb = new \App\Controller\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
-
-/*if (isset($_POST["btnSalvarEdicao"])) {
-    $bb->setModelo($_POST['modelo']);
-    $bb->setCliente($_POST['cliente']);
-    $bb->setNumPedido($_POST['numPedido']);
-    $bb->setNumFitec($_POST['numFitec']);
-    $bb->setFatorSeguranca($_POST['fatorSeguranca']);
-    $bb->setCapCarga($_POST['capCarga']);
-    $bb->setCor($_POST['cor']);
-    $bb->setImpressao($_POST['impressao']);
-    $bb->setDimensao($_POST['dimensao']);
-    $bb->setBoca($_POST['boca']);
-    $bb->setFundo($_POST['fundo']);
-    $bb->setLiner($_POST['liner']);
-    $bb->setDescContentor($_POST['descContentor']);
-    $bb->setIdBigBag($_POST['idBigBag']);
-    if (!$stmt->editar($bb)) {
-        header("Location: ./alertas/CadSucesso.php");
-    } else {
-        header("Location: ./alertas/CadErro.php");
-    }
-}
-*/
 
 foreach ($stmt->findByID($bb) as $dados) {}
 ?>

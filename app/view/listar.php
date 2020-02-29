@@ -2,6 +2,8 @@
 
 namespace App\view;
 
+include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
+
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
 $bb = new \App\Controller\Produto\BigBag();
@@ -33,7 +35,8 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
@@ -79,7 +82,6 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                 </div>
             </form>
             <hr>
-
 
             <table class="table responsive table-dark table-striped fonte-texto">
                 <thead>

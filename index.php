@@ -1,4 +1,6 @@
 <?php
+session_start();
+session_destroy();
 
 use App\Controller\Paginacao;
 use App\model\BancoDado;

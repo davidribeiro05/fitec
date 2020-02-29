@@ -2,6 +2,7 @@
 
 namespace App\view;
 
+include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
 $bb = new \App\Controller\Produto\BigBag();

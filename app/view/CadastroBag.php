@@ -1,3 +1,6 @@
+<?php
+include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
