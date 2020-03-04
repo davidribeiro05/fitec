@@ -6,9 +6,9 @@ class BancoDado
 {
 
     private static $instance;
-    private static $host = "localhost";
-    private static $usuario = "root";
-    private static $senha = "d4v1d";
+    private static $host = "David";
+    private static $usuario = "david";
+    private static $senha = "d4v1d.3238";
     private static $banco = "fitec";
 
     public static function getConn()
