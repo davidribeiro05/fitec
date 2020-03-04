@@ -15,29 +15,31 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 
 <body class="bg-pagina">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
             <!--<a class="navbar-brand" href="listar.php">Logo</a>-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="cadastroBag.php">Cadastrar<span class="sr-only">Cadastro de bigbag</span></a>
-                    </li> -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
                             <a class="dropdown-item active" href="cadastroBag.php">Contentor</a>
-                            <a class="dropdown-item" href="#">Componentes</a>
+                            <a class="dropdown-item " href="cadastroComponente.php">Componentes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                 </ul>
             </div>
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link justify-content-end" href="\index.php">Sair</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <div class="container">
@@ -202,7 +204,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
                     <button class="btn btn-outline-success" type="submit" name="salvar">Cadastrar</button>
-                    <a href="http://google.com.br" class="btn btn-outline-danger">Cancelar</a>
+                    <a href="\app\view\listar.php" class="btn btn-outline-danger">Cancelar</a>
                 </div>
             </div>
         </form>

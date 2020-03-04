@@ -41,7 +41,7 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
                             <a class="dropdown-item" href="cadastroBag.php">Contentor</a>
-                            <a class="dropdown-item" href="#">Componentes</a>
+                            <a class="dropdown-item" href="cadastroComponente.php">Componentes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
