@@ -203,12 +203,14 @@ foreach ($stmt->findByID($bb) as $dados) {
             <input class="form-control" type="hidden" name="idBigBag" value="<?php echo $dados['idBigBag'] ?>">
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success" type="submit" name="btnEditar">Editar</button>
-                    <a href="listar.php" class="btn btn-outline-danger">Cancelar</a>
+                    <button class="btn btn-outline-success" type="submit" name="btnEditar"><i class="fas fa-edit"></i></button>
+                    <a href="listar.php" class="btn btn-outline-danger"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>
     </div>
+
+    <script src="js/all.min.js"></script>
 </body>
 
 </html>

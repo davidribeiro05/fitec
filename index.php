@@ -33,4 +33,6 @@ require '/wamp64/www/fitec/vendor/autoload.php';
     </form>
 </body>
 
+<script src="app/view/js/all.min.js"></script>
+
 </html>

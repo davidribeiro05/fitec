@@ -37,7 +37,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="\index.php">Sair</a>
+                    <a class="nav-link justify-content-end" href="\index.php"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
@@ -203,16 +203,15 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
             </div>
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success" type="submit" name="salvar">Cadastrar</button>
-                    <a href="\app\view\listar.php" class="btn btn-outline-danger">Cancelar</a>
+                    <button class="btn btn-outline-success" type="submit" name="salvar"><i class="fas fa-save"></i></button>
+                    <a href="\app\view\listar.php" class="btn btn-outline-danger"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>
     </div>
 
-    <script src="js/jquery-3.4.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/all.min.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,8 @@ $bb = new \App\Controller\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
 
-foreach ($stmt->findByID($bb) as $dados) {}
+foreach ($stmt->findByID($bb) as $dados) {
+}
 ?>
 
 <!DOCTYPE html>
@@ -202,12 +203,14 @@ foreach ($stmt->findByID($bb) as $dados) {}
             <input class="form-control" type="hidden" name="idBigBag" value="<?php echo $dados['idBigBag'] ?>">
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success" type="submit" name="btnSalvarEdicao">Salvar alteração</button>
-                    <a href="listar.php" class="btn btn-outline-danger">Cancelar</a>
+                    <button class="btn btn-outline-success" type="submit" name="btnSalvarEdicao"><i class="fas fa-save"></i></button>
+                    <a href="listar.php" class="btn btn-outline-danger"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>
     </div>
+
+    <script src="js/all.min.js"></script>
 </body>
 
 </html>
