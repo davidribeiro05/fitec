@@ -197,13 +197,14 @@ if (isset($_POST["salvar"])) {
 }
 
 // Operação de exclusão
-if (isset($_POST["btnModal"])) :
+if (isset($_REQUEST["btnExcluir"])) :
     $bb->setIdBigBag($_POST['excluir']);
     if (!$stmt->excluir($bb)) :
         header("Location: /app/view/listar.php");
     else :
 
     endif;
+
 endif;
 
 // Operação de edição

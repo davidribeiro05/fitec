@@ -106,30 +106,14 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                         </form>
                         <form method="POST" action="\App\Controller\Produto\BigBag">
                             <td>
-                                <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
-                                <button class="btn bg-label btn-sm" type="button" data-toggle="modal" data-target="#modalExcluir" name="btnExcluir">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
+                                <input type="number" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
+                                <a href="" onclick="return confirm('Tem certeza que deseja deletar este registro?')">
+                                    <button class="btn bg-label btn-sm" type="submit" name="btnExcluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </a>
+
                             </td>
-                            <div class="modal fade text-center" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="modalExcluirLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header bg-label">
-                                            <h5 class="modal-title" id="modalExcluirLabel">Confirmar exclusão</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body bg-pagina">
-                                            <p>Deseja realmente excluir a ficha técnica</p>
-                                        </div>
-                                        <div class="modal-footer bg-pagina">
-                                            <button type="submit" class="btn btn-outline-success" name="btnModal">Sim</button>
-                                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Não</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </form>
                 </tr>
             <?php } ?>
