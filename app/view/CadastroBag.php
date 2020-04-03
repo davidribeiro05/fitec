@@ -45,7 +45,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
     <div class="container">
         <h1 class="fonte-titulo text-center">Cadastro de Ficha Técnica</h1>
         <hr>
-        <form method="POST" action="\App\Controller\Produto\BigBag">
+        <form method="POST" action="\App\Controller\BigBagController">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Modelo</label>
@@ -203,14 +203,13 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
             </div>
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success" type="submit" name="salvar"><i class="fas fa-save"></i></button>
-                    <a href="\app\view\listar.php" class="btn btn-outline-danger"><i class="fas fa-arrow-left"></i></a>
+                    <button class="btn btn-outline-success animation" type="submit" name="salvar"><i class="fas fa-save"></i></button>
+                    <a href="\app\view\listar.php" class="btn btn-outline-danger animation"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>
     </div>
 
-    
     <script src="js/all.min.js"></script>
 </body>
 

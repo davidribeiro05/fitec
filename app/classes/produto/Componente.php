@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Produto;
+namespace App\Classes\Produto;
 
 use App\model\ComponenteDAO;
 use App\Controller\Produto\BigBag;

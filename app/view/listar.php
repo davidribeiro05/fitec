@@ -6,7 +6,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
-$bb = new \App\Controller\Produto\BigBag();
+$bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $p = new \App\Controller\Paginacao();
 $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
@@ -104,15 +104,14 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                                 <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-external-link-alt"></i></button>
                         </td>
                         </form>
-                        <form method="POST" action="\App\Controller\Produto\BigBag">
+                        <form method="POST" action="\App\Controller\BigBagController">
                             <td>
-                                <input type="number" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
+                                <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
                                 <a href="" onclick="return confirm('Tem certeza que deseja deletar este registro?')">
                                     <button class="btn bg-label btn-sm" type="submit" name="btnExcluir">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </a>
-
                             </td>
                         </form>
                 </tr>

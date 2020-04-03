@@ -5,7 +5,7 @@ namespace App\model;
 class BigBagDAO
 {
 
-    public function inserir(\App\Controller\Produto\BigBag $b)
+    public function inserir(\App\Classes\Produto\BigBag $b)
     {
         $query = "INSERT INTO bigbag (modelo, cliente, numPedido, numFitec, dataCriacao, fatorSeguranca, capCarga, cor, impressao, dimensao, boca, fundo, liner, descContentor) 
         VALUES
@@ -38,7 +38,7 @@ class BigBagDAO
             return [];
         endif;
     }
-    public function findByID(\App\Controller\Produto\BigBag $b)
+    public function findByID(\App\Classes\Produto\BigBag $b)
     {
         $query = "SELECT * FROM bigbag where idBigBag = ?";
         $stmt = BancoDado::getConn()->prepare($query);
@@ -52,7 +52,7 @@ class BigBagDAO
         endif;
     }
 
-    function editar(\App\Controller\Produto\BigBag $b)
+    function editar(\App\Classes\Produto\BigBag $b)
     {
         $query = "UPDATE bigbag SET modelo = ?, cliente = ?, numPedido = ?, numFitec = ?, 
             fatorSeguranca = ?, capCarga = ?, cor = ?, impressao = ?, dimensao = ?, 
@@ -76,7 +76,7 @@ class BigBagDAO
         $stmt->execute();
     }
 
-    public function excluir(\App\Controller\Produto\BigBag $b)
+    public function excluir(\App\Classes\Produto\BigBag $b)
     {
         $query = "DELETE FROM bigbag WHERE idBigBag = ?";
         $stmt = BancoDado::getConn()->prepare($query);

@@ -16,13 +16,24 @@
 {
  background-color:#F2F2F2 !important;
 }
-.bg-label{
+
+.bg-label {
     background-color: #2CBFB1 !important;
 }
 
-input, select{
+.bg-label:hover {
+    background-color: #27D693 !important;
+    transition: 0.1s linear 0.2s;
+}
+
+
+input, select {
     background-color: #E2F2DA!important;
 }
 .bg-link{
     background-color: #E2F2DA !important;
+}
+
+.animation {
+    transition: 0.2s linear;
 }

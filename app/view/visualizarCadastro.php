@@ -5,7 +5,7 @@ namespace App\view;
 include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
-$bb = new \App\Controller\Produto\BigBag();
+$bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
 
@@ -39,6 +39,11 @@ foreach ($stmt->findByID($bb) as $dados) {
                     </li>
                 </ul>
             </div>
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link justify-content-end" href="\index.php"><i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
         </nav>
     </header>
     <div class="container">
@@ -203,8 +208,8 @@ foreach ($stmt->findByID($bb) as $dados) {
             <input class="form-control" type="hidden" name="idBigBag" value="<?php echo $dados['idBigBag'] ?>">
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success" type="submit" name="btnEditar"><i class="fas fa-edit"></i></button>
-                    <a href="listar.php" class="btn btn-outline-danger"><i class="fas fa-arrow-left"></i></a>
+                    <button class="btn btn-outline-success animation" type="submit" name="btnEditar"><i class="fas fa-edit"></i></button>
+                    <a href="listar.php" class="btn btn-outline-danger animation"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>

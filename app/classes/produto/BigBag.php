@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Produto;
+namespace App\Classes\Produto;
 
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
@@ -170,7 +170,7 @@ class BigBag
         $this->descContentor = $descContentor;
     }
 }
-
+/*
 $bb = new BigBag();
 $stmt = new \App\model\BigBagDAO();
 // Operação de inserção
@@ -229,3 +229,4 @@ if (isset($_POST["btnSalvarEdicao"])) {
         header("Location: ./alertas/CadErro.php");
     }
 }
+*/
