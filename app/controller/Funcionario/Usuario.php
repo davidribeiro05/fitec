@@ -88,8 +88,8 @@ if (isset($_POST['btnLogin'])) :
     $u->setSenha($_POST['senha']);
     if ($uDAO->validaLogin($u) == true) :
         $_SESSION['usuario'] = true;
-        header('Location: \App\view\listar.php');
+        header('Location: ../../view/listar.php');
     else :
-        header('Location: \index.php');
+        header('Location: ../../../index.php');
     endif;
 endif;

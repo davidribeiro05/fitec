@@ -8,6 +8,7 @@ require_once '/wamp64/www/fitec/vendor/autoload.php';
 $bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
+$routerBigBag = new \App\Controller\Rotas();
 
 foreach ($stmt->findByID($bb) as $dados) {
 }
@@ -41,7 +42,7 @@ foreach ($stmt->findByID($bb) as $dados) {
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="\index.php"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link justify-content-end" href="<?php $routerBigBag->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>

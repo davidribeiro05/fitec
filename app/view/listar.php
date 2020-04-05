@@ -10,6 +10,7 @@ $bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $p = new \App\Controller\Paginacao();
 $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
+$routerBigBag = new \App\Controller\Rotas();
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +50,7 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="\index.php"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link justify-content-end" href="<?php $routerBigBag->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
@@ -104,7 +105,7 @@ $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
                                 <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-external-link-alt"></i></button>
                         </td>
                         </form>
-                        <form method="POST" action="\App\Controller\BigBagController">
+                        <form method="POST" action="<?php $routerBigBag->rBigBag(); ?>">
                             <td>
                                 <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
                                 <a href="" onclick="return confirm('Tem certeza que deseja deletar este registro?')">

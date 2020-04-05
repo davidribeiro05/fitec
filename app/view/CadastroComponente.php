@@ -49,7 +49,7 @@ foreach ($stmtB->findByID($bb) as $dado){}
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="\index.php">Sair</a>
+                    <a class="nav-link justify-content-end" href="../../../index.php">Sair</a>
                 </li>
             </ul>
         </nav>

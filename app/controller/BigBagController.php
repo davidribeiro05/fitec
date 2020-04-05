@@ -6,6 +6,7 @@ require_once '/wamp64/www/fitec/vendor/autoload.php';
 
 $bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
+$bbRouter = new \App\Controller\Rotas();
 // Operação de inserção
 if (isset($_POST["salvar"])) :
     $bb->setModelo($_POST['modelo']);
@@ -23,7 +24,7 @@ if (isset($_POST["salvar"])) :
     $bb->setLiner($_POST['liner']);
     $bb->setDescContentor($_POST['descContentor']);
     if (!$stmt->inserir($bb)) :
-        header("Location: ../../../App/View/Alertas/CadSucesso.php");
+        header("Location: ../View/Alertas/CadSucesso.php");
     else :
         header("Location: ./alertas/CadErro.php");
     endif;
@@ -33,7 +34,7 @@ endif;
 if (isset($_REQUEST["btnExcluir"])) :
     $bb->setIdBigBag($_POST['excluir']);
     if (!$stmt->excluir($bb)) :
-        header("Location: ../../../App/View/listar.php");
+        header("Location: ../view/listar.php");
     else :
 
     endif;
@@ -57,7 +58,7 @@ if (isset($_POST["btnSalvarEdicao"])) :
     $bb->setDescContentor($_POST['descContentor']);
     $bb->setIdBigBag($_POST['idBigBag']);
     if (!$stmt->editar($bb)) :
-        header("Location: ../../../App/View/Alertas/CadSucesso.php");
+        header("Location: ../View/listar.php");
     else :
         header("Location: ./alertas/CadErro.php");
     endif;

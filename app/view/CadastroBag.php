@@ -1,5 +1,10 @@
 <?php
 include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
+
+require_once '/wamp64/www/fitec/vendor/autoload.php';
+
+$routerBigBag = new \App\Controller\Rotas();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,7 +42,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="\index.php"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link justify-content-end" href="<?php $routerBigBag->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
@@ -45,7 +50,7 @@ include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
     <div class="container">
         <h1 class="fonte-titulo text-center">Cadastro de Ficha Técnica</h1>
         <hr>
-        <form method="POST" action="\App\Controller\BigBagController">
+        <form method="POST" action="<?php $routerBigBag->rBigBag();?>">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Modelo</label>

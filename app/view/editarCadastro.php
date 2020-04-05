@@ -8,6 +8,7 @@ require_once '/wamp64/www/fitec/vendor/autoload.php';
 $bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
+$routerBigBag = new \App\Controller\Rotas();
 
 foreach ($stmt->findByID($bb) as $dados) {
 }
@@ -44,7 +45,7 @@ foreach ($stmt->findByID($bb) as $dados) {
     <div class="container">
         <h1 class="fonte-titulo text-center"><?php echo $dados['cliente'] ?></h1>
         <hr>
-        <form method="POST" action="\App\Controller\BigBagController">
+        <form method="POST" action="<?php $routerBigBag->rBigBag(); ?>">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Modelo</label>
