@@ -15,7 +15,10 @@ class Rotas
     {
         echo "\Fitec\App\Controller\BigBagController.php";
     }
-
+    public function rComponente()
+    {
+        echo "\Fitec\App\Controller\ComponenteController.php";
+    }
     public function rIndex()
     {
         echo "\Fitec\Index.php";

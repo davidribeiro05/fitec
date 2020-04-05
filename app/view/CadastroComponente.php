@@ -5,11 +5,13 @@ namespace App\view;
 include 'C:\wamp64\www\fitec\app\controller\SecaoLogin.php';
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
-$bb = new \App\Controller\Produto\BigBag();
+$bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\ComponenteDAO();
 $stmtB = new \App\model\BigBagDAO();
-$bb->setIdBigBag(165);
-foreach ($stmtB->findByID($bb) as $dado){}
+$bb->setIdBigBag(235);
+$routerComponente = new \App\Controller\Rotas();
+foreach ($stmtB->findByID($bb) as $dado) {
+}
 
 ?>
 
@@ -49,15 +51,15 @@ foreach ($stmtB->findByID($bb) as $dado){}
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="../../../index.php">Sair</a>
+                    <a class="nav-link justify-content-end" href="<?php $routerComponente->rIndex(); ?>">Sair</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <div class=" container">
         <h1 class="fonte-titulo text-center">Cadastro de Componentes</h1>
         <hr>
-        <form action="\App\Controller\Produto\Componente" method="POST">
+        <form action="<?php $routerComponente->rComponente(); ?>" method="POST">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Nome</label>
@@ -97,13 +99,13 @@ foreach ($stmtB->findByID($bb) as $dado){}
                         <input type="text" class="form-control" placeholder="Ex: Tecido Circ. 360 x 160 G" name="nomeDescricao" required>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 my-1">
+                <div class="col-md-4 my-1">
                     <label class="sr-only">Largura</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-label text-body">Largura</div>
                         </div>
-                        <input type="number" class="form-control" placeholder="Ex: 3.6" name="largura"  min="0" step="0.1">
+                        <input type="number" class="form-control" placeholder="Ex: 3.6" name="largura" min="0" step="0.1">
                     </div>
                 </div>
                 <div class="col-md-4 my-1">
@@ -112,13 +114,13 @@ foreach ($stmtB->findByID($bb) as $dado){}
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-label text-body">Corte</div>
                         </div>
-                        <input type="number" class="form-control" placeholder="Ex: 1.38" name="corte"  min="0" step="0.01">
+                        <input type="number" class="form-control" placeholder="Ex: 1.38" name="corte" min="0" step="0.01">
                     </div>
                 </div>
-            </div> -->
+            </div>
             <input type="hidden" name="idComponente">
-            <input type="number" name="idBigBag" value="<?php echo $dado['idBigBag'];?>">
-            
+            <input type="number" name="idBigBag" value="<?php echo $dado['idBigBag']; ?>">
+
             <div class="form-row justify-content-end col-md-12">
                 <div class="btn-group" role="group">
                     <button class="btn btn-outline-success" type="submit" name="salvarComponente">Cadastrar</button>

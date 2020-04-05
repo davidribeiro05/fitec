@@ -3,7 +3,7 @@
 namespace App\Classes\Produto;
 
 use App\model\ComponenteDAO;
-use App\Controller\Produto\BigBag;
+use App\Classes\Produto\BigBag;
 
 require_once '/wamp64/www/fitec/vendor/autoload.php';
 
@@ -17,6 +17,8 @@ class Componente extends BigBag
     private $idDescricao;
     private $nomeDescricao;
     private $fkComponente;
+    private $largura;
+    private $corte;
 
     public function getIdComponente()
     {
@@ -89,22 +91,25 @@ class Componente extends BigBag
     {
         $this->nomeDescricao = $nomeDescricao;
     }
-}
-$c = new Componente;
-$stmt = new ComponenteDAO;
-// Operação de inserção
-if (isset($_POST["salvarComponente"])) {
-    $c->setNome($_POST['nome']);
-    $c->setUnMedida($_POST['unMedida']);
-    $c->setGramatura($_POST['gramatura']);
-    $c->setIdBigBag($_POST['idBigBag']);
-    
-    $c->setNomeDescricao($_POST['nomeDescricao']);
-    $c->setIdComponente($_POST['idComponente']);
 
-    if (!$stmt->inserir($c)) {
-        header("Location: ./alertas/CadSucesso.php");
-    } else {
-        header("Location: ./alertas/CadErro.php");
+    public function getLargura()
+    {
+        return $this->largura;
+    }
+
+
+    public function setLargura($largura)
+    {
+        $this->largura = $largura;
+    }
+    public function getCorte()
+    {
+        return $this->corte;
+    }
+
+
+    public function setCorte($corte)
+    {
+        $this->corte = $corte;
     }
 }
