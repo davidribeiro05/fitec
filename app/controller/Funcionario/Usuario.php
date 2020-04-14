@@ -90,6 +90,7 @@ if (isset($_POST['btnLogin'])) :
         $_SESSION['usuario'] = true;
         header('Location: ../../view/listar.php');
     else :
+        $_SESSION['erroUsuario'] = "<p class='bg-warning'>Usuário não autênticado!</p>";;
         header('Location: ../../../index.php');
     endif;
 endif;

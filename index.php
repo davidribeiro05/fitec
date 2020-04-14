@@ -24,7 +24,11 @@ $u =  new Rotas();
 </head>
 
 <body class="text-center bg-pagina">
-    <form class="form-signin" method="POST" action="<?php $u->rLogin()?>">
+    <form class="form-signin" method="POST" action="<?php $u->rLogin(); ?>">
+        <?php if (isset($_SESSION['erroUsuario'])) :
+            echo $_SESSION['erroUsuario'];
+        endif;
+        ?>
         <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Bem vindo, por favor realize o login!</h1>
         <label for="usuario" class="sr-only">Usuário</label>
@@ -33,7 +37,9 @@ $u =  new Rotas();
         <input type="password" name="senha" class="form-control" placeholder="Digite aqui sua senha" required>
         <button class="btn btn-lg bg-label btn-block" type="submit" name="btnLogin">Entrar</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+
     </form>
+
 </body>
 
 <script src="app/view/js/all.min.js"></script>
