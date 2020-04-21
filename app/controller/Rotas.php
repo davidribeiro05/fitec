@@ -23,4 +23,14 @@ class Rotas
     {
         echo "\Fitec\Index.php";
     }
+    public function rController()
+    {
+        echo "\Fitec\App\Controller";
+    }
+
+    public function rView()
+    {
+        echo "\Fitec\App\View";
+    }
+ 
 }

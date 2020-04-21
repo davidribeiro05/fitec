@@ -41,9 +41,6 @@ $routerBigBag = new \App\Controller\Rotas();
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
                             <a class="dropdown-item" href="cadastroBag.php">Contentor</a>
-                            <a class="dropdown-item" href="cadastroComponente.php">Componentes</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                 </ul>

@@ -28,15 +28,23 @@ foreach ($stmt->findByID($bb) as $dados) {
 
 <body class="bg-pagina">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
             <!--<a class="navbar-brand" href="listar.php">Logo</a>-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="cadastroBag.php">Ficha Técnica<span class="sr-only">Ficha técnica</span></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cadastrar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
+                            <form action="<?= $routerBigBag->rView(); ?>\CadastroComponente.php" method="post">
+                                <input type="hidden" value="<?= $dados['idBigBag'] ?>" name="idBigBag">
+                                <input class="dropdown-item" type="submit" name="btnCadastroComponente" value="Componente"></input>
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -210,12 +218,17 @@ foreach ($stmt->findByID($bb) as $dados) {
             <div class="form-row justify-content-end">
                 <div class="btn-group" role="group">
                     <button class="btn btn-outline-success animation" type="submit" name="btnEditar"><i class="fas fa-edit"></i></button>
+
                     <a href="listar.php" class="btn btn-outline-danger animation"><i class="fas fa-arrow-left"></i></a>
                 </div>
             </div>
         </form>
+
     </div>
 
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/all.min.js"></script>
 </body>
 

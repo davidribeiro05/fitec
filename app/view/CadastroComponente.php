@@ -8,7 +8,8 @@ require_once '/wamp64/www/fitec/vendor/autoload.php';
 $bb = new \App\Classes\Produto\BigBag();
 $stmt = new \App\model\ComponenteDAO();
 $stmtB = new \App\model\BigBagDAO();
-$bb->setIdBigBag(235);
+$bb->setIdBigBag($_POST['idBigBag']);
+
 $routerComponente = new \App\Controller\Rotas();
 foreach ($stmtB->findByID($bb) as $dado) {
 }
@@ -33,25 +34,25 @@ foreach ($stmtB->findByID($bb) as $dado) {
             <!--<a class="navbar-brand" href="listar.php">Logo</a>-->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
-                    <li class="nav-item dropdown active">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
-                            <a class="dropdown-item" href="cadastroBag.php">Contentor</a>
-                            <a class="dropdown-item active" href="#">Componentes</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <form action="<?= $routerComponente->rView(); ?>\CadastroComponente.php" method="post">
+                                <input type="hidden" value="<?= $dados['idBigBag'] ?>" name="idBigBag">
+                                <input class="dropdown-item" type="submit" name="btnCadastroComponente" value="Componente"></input>
+                            </form>
                         </div>
                     </li>
                 </ul>
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="<?php $routerComponente->rIndex(); ?>">Sair</a>
+                    <a class="nav-link justify-content-end" href="<?php $routerComponente->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
