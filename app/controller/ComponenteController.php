@@ -22,3 +22,5 @@ if (isset($_POST['salvarComponente'])) :
         echo "Falha ao inserir registro";
     endif;
 endif;
+
+// READ

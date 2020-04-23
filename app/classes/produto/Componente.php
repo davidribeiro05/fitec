@@ -19,6 +19,7 @@ class Componente extends BigBag
     private $fkComponente;
     private $largura;
     private $corte;
+    private $idMedida;
 
     public function getIdComponente()
     {
@@ -111,5 +112,15 @@ class Componente extends BigBag
     public function setCorte($corte)
     {
         $this->corte = $corte;
+    }
+
+    public function getIdMedida()
+    {
+        return $this->idMedida;
+    }
+
+    public function setIdMedida($idMedida)
+    {
+        $this->idMedida = $idMedida;
     }
 }

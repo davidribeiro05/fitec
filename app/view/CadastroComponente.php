@@ -10,7 +10,7 @@ $stmt = new \App\model\ComponenteDAO();
 $stmtB = new \App\model\BigBagDAO();
 $bb->setIdBigBag($_POST['idBigBag']);
 
-$routerComponente = new \App\Controller\Rotas();
+$routerBigBag = new \App\Controller\Rotas();
 foreach ($stmtB->findByID($bb) as $dado) {
 }
 
@@ -37,22 +37,11 @@ foreach ($stmtB->findByID($bb) as $dado) {
                     <li class="nav-item active">
                         <a class="nav-link" href="listar.php">Página Inicial <span class="sr-only">Página Inicial</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cadastrar
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownCad">
-                            <form action="<?= $routerComponente->rView(); ?>\CadastroComponente.php" method="post">
-                                <input type="hidden" value="<?= $dados['idBigBag'] ?>" name="idBigBag">
-                                <input class="dropdown-item" type="submit" name="btnCadastroComponente" value="Componente"></input>
-                            </form>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link justify-content-end" href="<?php $routerComponente->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link justify-content-end" href="<?php $routerBigBag->rIndex(); ?>"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
             </ul>
         </nav>
@@ -60,7 +49,7 @@ foreach ($stmtB->findByID($bb) as $dado) {
     <div class=" container">
         <h1 class="fonte-titulo text-center">Cadastro de Componentes</h1>
         <hr>
-        <form action="<?php $routerComponente->rComponente(); ?>" method="POST">
+        <form action="<?php $routerBigBag->rComponente(); ?>" method="POST">
             <div class="form-row">
                 <div class="col-md-4 my-1">
                     <label class="sr-only">Nome</label>
@@ -120,7 +109,7 @@ foreach ($stmtB->findByID($bb) as $dado) {
                 </div>
             </div>
             <input type="hidden" name="idComponente">
-            <input type="number" name="idBigBag" value="<?php echo $dado['idBigBag']; ?>">
+            <input type="hidden" name="idBigBag" value="<?php echo $dado['idBigBag']; ?>">
 
             <div class="form-row justify-content-end col-md-12">
                 <div class="btn-group" role="group">

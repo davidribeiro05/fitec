@@ -11,20 +11,20 @@ class BigBagDAO
         VALUES
         (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = BancoDado::getConn()->prepare($query);
-        $stmt->bindValue(1, $b->getModelo(),\PDO::PARAM_STR);
-        $stmt->bindValue(2, $b->getCliente(),\PDO::PARAM_STR);
-        $stmt->bindValue(3, $b->getNumPedido(),\PDO::PARAM_INT);
-        $stmt->bindValue(4, $b->getNumFitec(),\PDO::PARAM_INT);
+        $stmt->bindValue(1, $b->getModelo(), \PDO::PARAM_STR);
+        $stmt->bindValue(2, $b->getCliente(), \PDO::PARAM_STR);
+        $stmt->bindValue(3, $b->getNumPedido(), \PDO::PARAM_INT);
+        $stmt->bindValue(4, $b->getNumFitec(), \PDO::PARAM_INT);
         $stmt->bindValue(5, $b->getDataCriacao());
-        $stmt->bindValue(6, $b->getFatorSeguranca(),\PDO::PARAM_STR);
-        $stmt->bindValue(7, $b->getCapCarga(),\PDO::PARAM_INT);
-        $stmt->bindValue(8, $b->getCor(),\PDO::PARAM_STR);
-        $stmt->bindValue(9, $b->getImpressao(),\PDO::PARAM_STR);
-        $stmt->bindValue(10, $b->getDimensao(),\PDO::PARAM_STR);
-        $stmt->bindValue(11, $b->getBoca(),\PDO::PARAM_STR);
-        $stmt->bindValue(12, $b->getFundo(),\PDO::PARAM_STR);
-        $stmt->bindValue(13, $b->getLiner(),\PDO::PARAM_STR);
-        $stmt->bindValue(14, $b->getDescContentor(),\PDO::PARAM_STR);
+        $stmt->bindValue(6, $b->getFatorSeguranca(), \PDO::PARAM_STR);
+        $stmt->bindValue(7, $b->getCapCarga(), \PDO::PARAM_INT);
+        $stmt->bindValue(8, $b->getCor(), \PDO::PARAM_STR);
+        $stmt->bindValue(9, $b->getImpressao(), \PDO::PARAM_STR);
+        $stmt->bindValue(10, $b->getDimensao(), \PDO::PARAM_STR);
+        $stmt->bindValue(11, $b->getBoca(), \PDO::PARAM_STR);
+        $stmt->bindValue(12, $b->getFundo(), \PDO::PARAM_STR);
+        $stmt->bindValue(13, $b->getLiner(), \PDO::PARAM_STR);
+        $stmt->bindValue(14, $b->getDescContentor(), \PDO::PARAM_STR);
         $stmt->execute();
     }
     public function findALL()
@@ -38,6 +38,7 @@ class BigBagDAO
             return [];
         endif;
     }
+
     public function findByID(\App\Classes\Produto\BigBag $b)
     {
         $query = "SELECT * FROM bigbag where idBigBag = ?";
@@ -91,13 +92,13 @@ class BigBagDAO
         $stmt = BancoDado::getConn()->query($total);
         $total_pg = $stmt->rowCount();
         $p->setNumPagina(ceil($total_pg / $qtd_pagina));
-        
+
         $inicio = ($qtd_pagina * $p->getPagina() - $qtd_pagina);
         $resultado = "SELECT * FROM bigbag limit $inicio, $qtd_pagina";
         $query_pg = BancoDado::getConn()->query($resultado);
-        
+
         //return $query_pg->rowCount();
-        
+
         if ($query_pg->rowCount() > 0) :
             $dados = $query_pg->fetchAll(\PDO::FETCH_ASSOC);
             return $dados;
