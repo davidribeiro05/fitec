@@ -12,7 +12,6 @@ $p = new \App\Controller\Paginacao();
 $p->setPagina((isset($_REQUEST['pagina'])) ? $_REQUEST['pagina'] : 1);
 $routerBigBag = new \App\Controller\Rotas();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -87,7 +86,7 @@ $routerBigBag = new \App\Controller\Rotas();
                     <td>Cliente</td>
                     <td>Modelo</td>
                     <td>Data de criação</td>
-                    <td style="float: right;">Ações</td>
+                    <td colspan="3" style="text-align: center;">Ações</td>
                 </tr>
             </thead>
             <tbody>
@@ -96,24 +95,30 @@ $routerBigBag = new \App\Controller\Rotas();
                         <td><?php echo $dado['cliente'] ?></td>
                         <td><?php echo $dado['descContentor'] ?></td>
                         <td><?php echo $dado['dataCriacao'] ?></td>
-                        <td>
+                        <td colspan="1">
                             <form action="visualizarCadastro.php" method="POST">
                                 <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="idBigBag">
                                 <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-external-link-alt"></i></button>
+                            </form>
                         </td>
-                        </form>
-                        <form method="POST" action="<?php $routerBigBag->rBigBag(); ?>">
-                            <td>
+
+                        <td>
+                            <form action="visualizarCadastro.php" method="POST">
+                                <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="idBigBag">
+                                <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-table"></i></button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="<?php $routerBigBag->rBigBag(); ?>">
                                 <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="excluir">
                                 <a href="" onclick="return confirm('Tem certeza que deseja deletar este registro?')">
                                     <button class="btn bg-label btn-sm" type="submit" name="btnExcluir">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </a>
-                            </td>
-                        </form>
-                </tr>
-            <?php } ?>
+                            </form>
+                        </td>
+                </tr> <?php } ?>
             </tbody>
         </table>
         <nav aria-label="...">

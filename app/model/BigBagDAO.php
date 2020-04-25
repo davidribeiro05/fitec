@@ -43,7 +43,7 @@ class BigBagDAO
     {
         $query = "SELECT * FROM bigbag where idBigBag = ?";
         $stmt = BancoDado::getConn()->prepare($query);
-        $stmt->bindValue(1, $b->getIdBigBag());
+        $stmt->bindValue(1, $b->getIdBigBag(), \PDO::PARAM_INT);
         $stmt->execute();
         if ($stmt->rowCount() > 0) :
             $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);

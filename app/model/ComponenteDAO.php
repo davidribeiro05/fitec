@@ -78,6 +78,7 @@ class ComponenteDAO
     public function findById(\App\Classes\Produto\Componente $c)
     {
         $query = "SELECT 
+        bb.cliente ,
         c.idComponente idComponente,
         c.nome nome,
         c.unMedida unMedida,

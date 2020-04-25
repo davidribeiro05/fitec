@@ -15,7 +15,6 @@ foreach ($stmtB->findByID($bb) as $dado) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,7 +24,7 @@ foreach ($stmtB->findByID($bb) as $dado) {
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/personalizado.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <title>Cadastro de Componente</title>
+    <title>Editar de Componente</title>
 </head>
 
 <body class="bg-pagina">
@@ -111,10 +110,10 @@ foreach ($stmtB->findByID($bb) as $dado) {
             <input type="hidden" name="idComponente">
             <input type="hidden" name="idBigBag" value="<?php echo $dado['idBigBag']; ?>">
 
-            <div class="form-row justify-content-end">
+            <div class="form-row justify-content-end col-md-12">
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-success animation" type="submit" name="salvarComponente"><i class="fas fa-save"></i></button>
-                    <a href="<?= $routerBigBag->rView() ?>/listar.php" class="btn btn-outline-danger animation"><i class="fas fa-arrow-left"></i></a>
+                    <button class="btn btn-outline-success" type="submit" name="salvarComponente">Cadastrar</button>
+                    <a href="\app\view\listar.php" class="btn btn-outline-danger">Cancelar</a>
                 </div>
             </div>
         </form>
