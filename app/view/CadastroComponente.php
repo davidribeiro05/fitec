@@ -95,7 +95,7 @@ foreach ($stmtB->findByID($bb) as $dado) {
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-label text-body">Largura</div>
                         </div>
-                        <input type="number" class="form-control" placeholder="Ex: 3.6" name="largura" min="0" step="0.1">
+                        <input type="number" class="form-control" placeholder="Ex: 3.6" name="largura" min="0" step="0.01">
                     </div>
                 </div>
                 <div class="col-md-4 my-1">
@@ -104,10 +104,37 @@ foreach ($stmtB->findByID($bb) as $dado) {
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-label text-body">Corte</div>
                         </div>
-                        <input type="number" class="form-control" placeholder="Ex: 1.38" name="corte" min="0" step="0.01">
+                        <input type="number" class="form-control" placeholder="Ex: 1.38" name="corte" min="0" step="0.001">
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="pesoManual" name="pesoManual">
+                <label class="form-check-label" for="pesoManual"><small>Não calcular peso automaticamente</small></label>
+            </div>
+            <p class="small">Somente preencher esses campos caso, opte por inserir peso manualmente</p>
+            <div class="form-row">
+                <div class="col-md-4 my-1">
+                    <label class="sr-only">Consumo Kilo</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-label text-body">Consumo Kilo</div>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Ex: 0,09" name="consumoKG" step="0.0001" max="2">
+                    </div>
+                </div>
+                <div class="col-md-4 my-1">
+                    <label class="sr-only">Consumo</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-label text-body">Consumo</div>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Ex: 0,09" name="consumo" step="0.0001" max="2">
+                    </div>
+                </div>
+            </div>
+
             <input type="hidden" name="idComponente">
             <input type="hidden" name="idBigBag" value="<?php echo $dado['idBigBag']; ?>">
 

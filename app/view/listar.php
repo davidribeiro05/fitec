@@ -103,7 +103,7 @@ $routerBigBag = new \App\Controller\Rotas();
                         </td>
 
                         <td>
-                            <form action="visualizarCadastro.php" method="POST">
+                            <form action="fitec.php" method="POST">
                                 <input type="hidden" value="<?php echo $dado['idBigBag'] ?>" name="idBigBag">
                                 <button class="btn bg-label btn-sm" type="submit"><i class="fas fa-table"></i></button>
                             </form>

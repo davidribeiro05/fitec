@@ -9,10 +9,9 @@ require_once '/wamp64/www/fitec/vendor/autoload.php';
 $componente = new \App\Classes\Produto\Componente();
 $stmt = new \App\model\ComponenteDAO();
 $routerBigBag = new \App\Controller\Rotas();
-$componente->setIdBigBag(1);
+$componente->setIdBigBag($_POST['idBigBag']);
 foreach ($stmt->findById($componente) as $dado) {
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,7 +55,7 @@ foreach ($stmt->findById($componente) as $dado) {
         </nav>
     </header>
     <div class="container">
-        <h1 class="fonte-titulo"><?= $dado['cliente']?></h1>
+        <h1 class="fonte-titulo text-center"><?= $dado['cliente'] ?></h1>
         <hr>
         <table class="table">
             <thead class="thead-dark">
@@ -69,24 +68,29 @@ foreach ($stmt->findById($componente) as $dado) {
                     <th scope="col">Consumo</th>
                     <th scope="col">UN</th>
                     <th scope="col">Descrição</th>
+
                 </tr>
             </thead>
             <tbody class="bg-light">
-                <tr>
-                    <td scope="row"><?= $dado['nome']; ?></td>
-                    <td scope="row"><?= $dado['largura']; ?></td>
-                    <td scope="row">x</td>
-                    <td scope="row"><?= $dado['corte']; ?></td>
-                    <td scope="row"></td>
-                    <td scope="row"></td>
-                    <td scope="row"><?= $dado['unMedida']; ?></td>
-                    <td scope="row"><?= $dado['descricao']; ?></td>
-                    
-                </tr>
+                <?php foreach ($stmt->findById($componente) as $dado) { ?>
+                    <tr>
+                        <td scope="row"><?= $dado['nome']; ?></td>
+                        <td scope="row"><?= $dado['largura']; ?></td>
+                        <td scope="row">x</td>
+                        <td scope="row"><?= $dado['corte']; ?></td>
+                        <td scope="row"><?= number_format($dado['consumoKG'], 4); ?></td>
+                        <td scope="row"><?= number_format($dado['consumo'], 4); ?></td>
+                        <td scope="row"><?= $dado['unMedida']; ?></td>
+                        <td scope="row"><?= $dado['descricao']; ?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
+        </table>
     </div>
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.min.js"></script>
 </body>
 
 </html>
-
-</table>

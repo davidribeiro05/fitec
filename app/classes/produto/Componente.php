@@ -20,6 +20,8 @@ class Componente extends BigBag
     private $largura;
     private $corte;
     private $idMedida;
+    private $consumo;
+    private $consumoKG;
 
     public function getIdComponente()
     {
@@ -122,5 +124,25 @@ class Componente extends BigBag
     public function setIdMedida($idMedida)
     {
         $this->idMedida = $idMedida;
+    }
+
+    public function getconsumo()
+    {
+        return $this->consumo;
+    }
+
+    public function setconsumo($consumo)
+    {
+        $this->consumo = $consumo;
+    }
+
+    public function getConsumoKG()
+    {
+        return $this->consumoKG;
+    }
+
+    public function setConsumoKG($consumoKG)
+    {
+        $this->consumoKG = $consumoKG;
     }
 }

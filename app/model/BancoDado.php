@@ -19,7 +19,7 @@ class BancoDado
             endif;
             return self::$instance;
         } catch (\Exception $ex) {
-            echo $ex->getMessage();
+            echo " {$ex->getMessage()} . <br>";
         }
     }
 }
